@@ -1,6 +1,6 @@
 {
   "name": "ls_emmet_tc",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Just emmet completion with LSP",
   "main": "dist/server.js",
   "scripts": {
