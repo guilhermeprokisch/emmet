@@ -9,7 +9,7 @@ import {
 
 const syntaxes = {
   markup: ["html", "xml", "xsl", "jsx", "js", "pug", "slim", "haml", "hbs",
-    "handlebars", "liquid"],
+    "handlebars"],
   stylesheet: ["css", "sass", "scss", "less", "sss", "stylus"],
 };
 
@@ -18,6 +18,8 @@ function parseLanguage(language: string): string {
     language = "jsx";
   if (language === "javascript") language = "js";
   if (language === "liquid") language = "html" ;
+  if(!language) language = "html";
+
   return language;
 }
 
@@ -44,7 +46,6 @@ function getSyntax(language: string): string | undefined {
 }
 
 function getExtracted(language: string, line: string, character: number) {
-  if (language === "liquid") language = "html" ;
   let extracted;
   if (isMarkupEmmet(language)) {
     extracted = extract(line, character);
@@ -65,7 +66,6 @@ function getExtracted(language: string, line: string, character: number) {
 }
 
 function getExpanded(language: string, abbreviation: string): string {
-  if (language === "liquid") language = "html" ;
   let expanded;
   const options = {
     "output.field": (index: any, placeholder: any) =>
@@ -93,6 +93,8 @@ function complete(
   const character = textDocsPosition.position.character;
 
   if (languageId === "liquid") languageId = "html" ;
+  if(!languageId) languageId = "html";
+
   const { left, right, abbreviation } = getExtracted(
     languageId,
     line,
