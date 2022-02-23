@@ -17,6 +17,7 @@ function parseLanguage(language: string): string {
   if (language == "javascriptreact" || language == "typescriptreact")
     language = "jsx";
   if (language === "javascript") language = "js";
+  if (language === "liquid") language = "html" ;
   return language;
 }
 
