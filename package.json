@@ -1,6 +1,6 @@
 {
-  "name": "ls_emmet",
-  "version": "1.0.8",
+  "name": "ls_emmet_tc",
+  "version": "1.0.0",
   "description": "Just emmet completion with LSP",
   "main": "dist/server.js",
   "scripts": {
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pedro757/emmet.git"
+    "url": "git+https://github.com/guilhermeprokisch/emmet.git"
   },
-  "author": "@pedro757",
+  "author": "@guilhermeprokisch",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pedro757/emmet/issues"
+    "url": "https://github.com/guilhermeprokisch/emmet/issues"
   },
-  "homepage": "https://github.com/pedro757/emmet#readme",
+  "homepage": "https://github.com/guilhermeprokisch/emmet#readme",
   "dependencies": {
     "@types/node": "^16.7.10",
     "emmet": "^2.3.4",
