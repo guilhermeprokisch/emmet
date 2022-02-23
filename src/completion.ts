@@ -44,6 +44,7 @@ function getSyntax(language: string): string | undefined {
 }
 
 function getExtracted(language: string, line: string, character: number) {
+  if (language === "liquid") language = "html" ;
   let extracted;
   if (isMarkupEmmet(language)) {
     extracted = extract(line, character);
@@ -64,6 +65,7 @@ function getExtracted(language: string, line: string, character: number) {
 }
 
 function getExpanded(language: string, abbreviation: string): string {
+  if (language === "liquid") language = "html" ;
   let expanded;
   const options = {
     "output.field": (index: any, placeholder: any) =>
