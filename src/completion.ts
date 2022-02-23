@@ -86,12 +86,13 @@ function complete(
 ) {
   const docs = documents.get(textDocsPosition.textDocument.uri);
   if (!docs) throw "failed to find document";
-  const languageId = docs.languageId;
+  var languageId = docs.languageId;
   const content = docs.getText();
   const linenr = textDocsPosition.position.line;
   const line = String(content.split(/\r?\n/g)[linenr]);
   const character = textDocsPosition.position.character;
 
+  if (languageId === "liquid") languageId = "html" ;
   const { left, right, abbreviation } = getExtracted(
     languageId,
     line,
